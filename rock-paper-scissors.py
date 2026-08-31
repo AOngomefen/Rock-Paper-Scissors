@@ -3,7 +3,7 @@ starting the format of the rock, paper, scissors game.
 
 '''
 
-rock = "
+rock = ("""
     _______
 ---l   ____)
       (_____)
@@ -11,9 +11,9 @@ rock = "
       (____)
 ---.__(___)
 
-"
+""")
 
-paper = "
+paper = ("""
     _______
 ---l    ____)____
            ______)
@@ -21,9 +21,9 @@ paper = "
          _______)
 ---.__________)
 
-"
+"""")
 
-scissors = "
+scissors = (""""
    _______
 ---l   ____)____
           ______)
@@ -31,9 +31,17 @@ scissors = "
       (____)
 ---.__(___)
 
-"
+""")
+
 '''
 using ascii drawing for the hand gestures and plays
 
 '''
 
+greeting() = input("""
+----------------------------------------------
+Would Like To Play Some Tic-Tac-Toe? (Y/N)
+----------------------------------------------
+""")
+
+while (greeting)
