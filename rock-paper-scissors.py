@@ -44,4 +44,14 @@ Would Like To Play Some Tic-Tac-Toe? (Y/N)
 ----------------------------------------------
 """)
 
-while (greeting)
+while (greeting == Y){
+        gesture = input("Play your hand! (rock, paper, scissors) ")
+        #random -> select gesture
+        
+        switch (gesture){
+            case rock:
+                if (computer_play = rock){
+                print("----------------------------------------------/nscore is tied!")
+         }
+         }
+         }
