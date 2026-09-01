@@ -3,6 +3,8 @@ starting the format of the rock, paper, scissors game.
 ASCII drawing curtesy of (github: wynand1004)
 '''
 
+import random
+
 rock_gesture = ("""
     _______
 ---l   ____)
@@ -47,9 +49,12 @@ Would Like To Play Some Tic-Tac-Toe? (Y/N)
 Score = 0
 Turn = 0
 # choose if turn based or player based ?
-while (Turn != 3){
+
+while (continue_game != N || continue_game != n){
+        
         gesture = input("Play your hand! (rock, paper, scissors) ")
-        #random -> select gesture
+        gesture_list = ['rock', 'paper', 'scissors']
+        computer_play = random.choice(gesture_list)
         
         switch (gesture){
             case rock:
