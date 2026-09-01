@@ -61,7 +61,25 @@ while (Turn != 3){
                 print("----------------------------------------------\nYou win!")
                 Score++
                 print("Score is ", Score, "Hmm... Best two out of three?")
-                
+            case scissors:
+                if (computer_play == rock){
+                print("----------------------------------------------\nTry again!")
+                # play turn again
+                }
+                else (computer_play == scissors) {
+                print("----------------------------------------------\nYou win!")
+                Score++
+                print("Score is ", Score, "Hmm... Best two out of three?")
+            case paper:
+                if (computer_play == rock){
+                print("----------------------------------------------\nTry again!")
+                # play turn again
+                }
+                else (computer_play == scissors) {
+                print("----------------------------------------------\nYou win!")
+                Score++
+                print("Score is ", Score, "Hmm... Best two out of three?")
+            
                 
                  }
          }
