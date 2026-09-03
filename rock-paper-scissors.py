@@ -41,9 +41,9 @@ using ascii drawing for the hand gestures and plays
 '''
 
 greeting() = input("""
-----------------------------------------------
-Would Like To Play Some Tic-Tac-Toe? (Y/N)
-----------------------------------------------
+---------------------------------------------------
+Would Like To Play Some Rock-Paper-Scissors? (Y/N)
+---------------------------------------------------
 """)
 
 Score = 0
@@ -63,20 +63,62 @@ while (continue_game != 'N' || continue_game != 'n'){
         #validate input
         gesture_list = ['rock', 'paper', 'scissors']
         computer_play = random.choice(gesture_list)
+        print("Computer Played ->")
+        
+        if computer_play == 'rock' {
+            print(rock_gesture)
+            computer = "rock"
+            }
+        else if computer_play == 'paper' {
+            print(paper_gesture)
+            computer = "paper"
+            }
+        else if computer_play == 'scissors' {
+            print(scissors_gesture)
+            computer = "scissors"
+            }
+        else
+            print("Something went wrong? Please input a valid response!")
+        
         
         switch(gesture){
-            case rock:
+            case "rock":
                 print("You Played ->")
                 print(rock_gesture)
-                print("Computer Played ->")
-                print(
                 
-                if computer_play == gesture {
-                
+                if computer == "scissors" {
+                    print("You Win!")
                  }
-                
+                else if computer == "paper"{
+                    print("You Lose!")
                  }
-        
-        
+                else
+                    print("We Tied!")
+             
+            case "paper":
+                print("You Played ->")
+                print(paper_gesture)
+                
+                if computer == "rock" {
+                    print("You Win!")
+                 }
+                else if computer == "scissors"{
+                    print("You Lose!")
+                 }
+                else
+                    print("We Tied!")
+            
+            case "scissors":
+                print("You Played ->")
+                print(scissors_gesture)
+                
+                if computer == "paper" {
+                    print("You Win!")
+                 }
+                else if computer == "rock"{
+                    print("You Lose!")
+                 }
+                else
+                    print("We Tied!")
          
          }
