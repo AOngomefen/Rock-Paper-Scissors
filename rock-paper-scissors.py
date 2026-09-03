@@ -47,45 +47,36 @@ Would Like To Play Some Tic-Tac-Toe? (Y/N)
 """)
 
 Score = 0
-Turn = 0
+turn = 0
+
+continue_game = input("Would You like to Play? (Y/N)")
+while (continue_game != 'N' || continue_game != 'Y' ){
+    continue_game = input("Input Invalid! Try Again")
+    }
+
+
 # choose if turn based or player based ?
 
-while (continue_game != N || continue_game != n){
+while (continue_game != 'N' || continue_game != 'n'){
         
         gesture = input("Play your hand! (rock, paper, scissors) ")
+        #validate input
         gesture_list = ['rock', 'paper', 'scissors']
         computer_play = random.choice(gesture_list)
         
-        switch (gesture){
+        switch(gesture){
             case rock:
-                if (computer_play == rock){
-                print("----------------------------------------------\nTry again!")
-                # play turn again
-                }
-                else (computer_play == scissors) {
-                print("----------------------------------------------\nYou win!")
-                Score++
-                print("Score is ", Score, "Hmm... Best two out of three?")
-            case scissors:
-                if (computer_play == rock){
-                print("----------------------------------------------\nTry again!")
-                # play turn again
-                }
-                else (computer_play == scissors) {
-                print("----------------------------------------------\nYou win!")
-                Score++
-                print("Score is ", Score, "Hmm... Best two out of three?")
-            case paper:
-                if (computer_play == rock){
-                print("----------------------------------------------\nTry again!")
-                # play turn again
-                }
-                else (computer_play == scissors) {
-                print("----------------------------------------------\nYou win!")
-                Score++
-                print("Score is ", Score, "Hmm... Best two out of three?")
-            
+                print("You Played ->")
+                print(rock_gesture)
+                print("Computer Played ->")
+                print(
+                
+                if computer_play == gesture {
                 
                  }
-         }
+                
+                 }
+        
+        
+         
          }
