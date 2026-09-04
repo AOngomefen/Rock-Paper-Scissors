@@ -89,14 +89,21 @@ while (continue_game != 'N' || continue_game != 'n'){
                 
                 if computer == "scissors" {
                     print("You Win!")
-                    Score++
-                    print("Your Score: ", palayer_score)
+                    player_score++
+                    print("Player Score: ", player_score)
+                    print("Computer Score: ", computer_score)
+                    
                  }
                 else if computer == "paper"{
                     print("You Lose!")
+                    computer_score++
+                    print("Player Score: ", player_score)
+                    print("Computer Score: ", computer_score)
                  }
                 else
                     print("We Tied!")
+                    print("Player Score: ", player_score)
+                    print("Computer Score: ", computer_score)
              
             case "paper":
                 print("You Played ->")
@@ -104,12 +111,20 @@ while (continue_game != 'N' || continue_game != 'n'){
                 
                 if computer == "rock" {
                     print("You Win!")
+                    player_score++
+                    print("Player Score: ", player_score)
+                    print("Computer Score: ", computer_score)
                  }
                 else if computer == "scissors"{
                     print("You Lose!")
+                    computer_score++
+                    print("Player Score: ", player_score)
+                    print("Computer Score: ", computer_score)
                  }
                 else
                     print("We Tied!")
+                    print("Player Score: ", player_score)
+                    print("Computer Score: ", computer_score)
             
             case "scissors":
                 print("You Played ->")
@@ -117,11 +132,19 @@ while (continue_game != 'N' || continue_game != 'n'){
                 
                 if computer == "paper" {
                     print("You Win!")
+                    player_score++
+                    print("Player Score: ", player_score)
+                    print("Computer Score: ", computer_score)
                  }
                 else if computer == "rock"{
                     print("You Lose!")
+                    computer_score++
+                    print("Your Score: ", player_score)
+                    print("Computer Score: ", computer_score)
                  }
                 else
                     print("We Tied!")
+                    print("Your Score: ", player_score)
+                    print("Computer Score: ", computer_score)
          
          }
