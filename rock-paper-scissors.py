@@ -46,7 +46,8 @@ Would Like To Play Some Rock-Paper-Scissors? (Y/N)
 ---------------------------------------------------
 """)
 
-Score = 0
+player_score = 0
+computer_score = 0
 turn = 0
 
 continue_game = input("Would You like to Play? (Y/N)")
@@ -88,6 +89,8 @@ while (continue_game != 'N' || continue_game != 'n'){
                 
                 if computer == "scissors" {
                     print("You Win!")
+                    Score++
+                    print("Your Score: ", palayer_score)
                  }
                 else if computer == "paper"{
                     print("You Lose!")
