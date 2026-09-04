@@ -1,6 +1,6 @@
 '''
-starting the format of the rock, paper, scissors game.
-ASCII drawing curtesy of (github: wynand1004)
+Rock, Paper, Scissors game.
+ASCII drawing courtesy of (github: wynand1004)
 '''
 
 import random
@@ -12,7 +12,6 @@ rock_gesture = ("""
       (_____)
       (____)
 ---.__(___)
-
 """)
 
 paper_gesture = ("""
@@ -22,129 +21,70 @@ paper_gesture = ("""
           _______)
          _______)
 ---.__________)
+""")
 
-"""")
-
-scissors_gesture = (""""
+scissors_gesture = ("""
    _______
 ---l   ____)____
           ______)
        __________)
       (____)
 ---.__(___)
-
 """)
 
-'''
-using ascii drawing for the hand gestures and plays
+gestures = {
+    "rock": rock_gesture,
+    "paper": paper_gesture,
+    "scissors": scissors_gesture,
+}
 
-'''
+gesture_list = ["rock", "paper", "scissors"]
 
-greeting() = input("""
----------------------------------------------------
-Would Like To Play Some Rock-Paper-Scissors? (Y/N)
----------------------------------------------------
-""")
+# What beats what: key beats value
+beats = {
+    "rock": "scissors",
+    "paper": "rock",
+    "scissors": "paper",
+}
 
 player_score = 0
 computer_score = 0
 turn = 0
 
-continue_game = input("Would You like to Play? (Y/N)")
-while (continue_game != 'N' || continue_game != 'Y' ){
-    continue_game = input("Input Invalid! Try Again")
-    }
+continue_game = input("Would You like to Play? (Y/N) ").strip().upper()
+while continue_game not in ("Y", "N"):
+    continue_game = input("Input Invalid! Try Again (Y/N) ").strip().upper()
 
+while continue_game == "Y":
+    turn += 1
 
-# choose if turn based or player based ?
+    # validate player input
+    gesture = input("Play your hand! (rock, paper, scissors) ").strip().lower()
+    while gesture not in gesture_list:
+        gesture = input("Invalid choice. Play rock, paper, or scissors: ").strip().lower()
 
-while (continue_game != 'N' || continue_game != 'n'){
-        
-        gesture = input("Play your hand! (rock, paper, scissors) ")
-        #validate input
-        gesture_list = ['rock', 'paper', 'scissors']
-        computer_play = random.choice(gesture_list)
-        print("Computer Played ->")
-        
-        if computer_play == 'rock' {
-            print(rock_gesture)
-            computer = "rock"
-            }
-        else if computer_play == 'paper' {
-            print(paper_gesture)
-            computer = "paper"
-            }
-        else if computer_play == 'scissors' {
-            print(scissors_gesture)
-            computer = "scissors"
-            }
-        else
-            print("Something went wrong? Please input a valid response!")
-        
-        
-        switch(gesture){
-            case "rock":
-                print("You Played ->")
-                print(rock_gesture)
-                
-                if computer == "scissors" {
-                    print("You Win!")
-                    player_score++
-                    print("Player Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-                    
-                 }
-                else if computer == "paper"{
-                    print("You Lose!")
-                    computer_score++
-                    print("Player Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-                 }
-                else
-                    print("We Tied!")
-                    print("Player Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-             
-            case "paper":
-                print("You Played ->")
-                print(paper_gesture)
-                
-                if computer == "rock" {
-                    print("You Win!")
-                    player_score++
-                    print("Player Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-                 }
-                else if computer == "scissors"{
-                    print("You Lose!")
-                    computer_score++
-                    print("Player Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-                 }
-                else
-                    print("We Tied!")
-                    print("Player Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-            
-            case "scissors":
-                print("You Played ->")
-                print(scissors_gesture)
-                
-                if computer == "paper" {
-                    print("You Win!")
-                    player_score++
-                    print("Player Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-                 }
-                else if computer == "rock"{
-                    print("You Lose!")
-                    computer_score++
-                    print("Your Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-                 }
-                else
-                    print("We Tied!")
-                    print("Your Score: ", player_score)
-                    print("Computer Score: ", computer_score)
-         
-         }
+    computer = random.choice(gesture_list)
+
+    print("Computer Played ->")
+    print(gestures[computer])
+
+    print("You Played ->")
+    print(gestures[gesture])
+
+    if gesture == computer:
+        print("We Tied!")
+    elif beats[gesture] == computer:
+        print("You Win!")
+        player_score += 1
+    else:
+        print("You Lose!")
+        computer_score += 1
+
+    print("Player Score:", player_score)
+    print("Computer Score:", computer_score)
+
+    continue_game = input("Play again? (Y/N) ").strip().upper()
+    while continue_game not in ("Y", "N"):
+        continue_game = input("Input Invalid! Try Again (Y/N) ").strip().upper()
+
+print(f"\nThanks for playing! Final score - You: {player_score}, Computer: {computer_score}")
